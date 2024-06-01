@@ -1,0 +1,20 @@
+{% include 'header.html' %}
+
+<form action="/account/hello_world/" method="post">
+    {% csrf_token %}
+    <div>
+        <input type="text" name="hello_world_input">
+    </div>
+    <div>
+        <input type="submit" value="POST"/>
+    </div>
+</form>
+{% if hello_world_list %}
+
+    {% for hello_world_output in hello_world_list %}
+    <h2>
+        {{ hello_world_output.text }}
+    </h2>
+    {% endfor %}
+{% endif %}
+{ % block content %}
