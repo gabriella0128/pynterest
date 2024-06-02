@@ -6,7 +6,7 @@
 </head>
 <body>
 <div>
-    <form action="{% url 'accountapp:delete' pk=user.pk%}" method="post">
+    <form action="{% url 'accountapp:delete' pk=target_user.pk%}" method="post">
        {% csrf_token %}
         <input type="submit">
     </form>
